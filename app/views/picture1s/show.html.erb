@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @picture1.name %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%= @picture1.content_type %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%#= @picture1.data %>
+  <img src="<%= url_for(:action => 'picture', :id => @picture1.id) %>"/>
+</p>
+
+
+<%= link_to 'Edit', edit_picture1_path(@picture1) %> |
+<%= link_to 'Back', picture1s_path %>

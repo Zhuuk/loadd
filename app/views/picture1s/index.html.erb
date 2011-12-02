@@ -1,0 +1,27 @@
+<h1>Listing picture1s</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content type</th>
+    <th>Data</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @picture1s.each do |picture1| %>
+  <tr>
+    <td><%#= picture1.name %></td>
+    <td><%#= picture1.content_type %></td>
+    <td><%= picture1.id %></td>
+     <td><%= picture1.name %></td>
+    <td><%= picture1.comments %></td>
+    <td><%#= picture1.data %></td>
+    <td><img src="<%= url_for(:action => 'picture', :id => picture1.id) %>" width="70"  height="50"/></td>
+    <td><%= link_to 'Show', picture1 %></td>
+    <td><%= link_to 'Edit', edit_picture1_path(picture1) %></td>
+    <td><%= link_to 'Destroy', picture1, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New Picture1', new_picture1_path %>
